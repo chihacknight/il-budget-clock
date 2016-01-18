@@ -6,7 +6,7 @@ Counting up the days and consequences Illinois goes without a budget. It would b
  - Inspire citizens to demand action
  - Explain the background
  - Illustrate the impact on services
- - Inspire stopgap support for 
+ - Inspire stopgap support for impacted providers
 
 ##Example/potential features
  - Clock showing days without an IL budget
