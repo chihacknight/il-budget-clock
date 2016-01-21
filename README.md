@@ -15,4 +15,4 @@ Counting up the days and consequences Illinois goes without a budget. It would b
  - autodial your representatives
 
 ##Story Map
-http://boardthing.com/board/569d3afdbf753be8000005de
+https://github.com/chihacknight/il-budget-clock/issues/1
