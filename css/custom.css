@@ -1,0 +1,45 @@
+body {
+	font-family: 'Alegreya Sans', sans-serif;
+	margin: 0px;
+	background-color: #c0392b;
+	color: #eee;
+}
+
+.center{
+    text-align:center;
+}
+
+h1, h2, h3, .h1, .h2, .h3 {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 800;
+}
+.h1 {
+	font-size: 34px;
+}
+.h2 {
+	font-size: 30px;
+}
+
+#clock {
+	font-size: 30px;
+}
+
+
+a:link, a:visited, a:hover, a:active{
+    color: #444;
+}
+
+button{
+    background-color: inherit;
+    outline:none;
+    border: 2px solid;
+    border-color: #eee;
+    border-radius: 12px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 20px;
+    color: #eee;
+    padding: 4px;
+    margin: 4px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}

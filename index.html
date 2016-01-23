@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>Illinois Budget Clock</title>
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="./css/custom.css">
+        <link rel="icon" type="image/png" href="favicon.png">
+
+        <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,800' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+        <div class="center">
+
+            <p class="h2">Illinois has been missing a budget for</p>
+            <div id="clock">
+            </div>
+
+            <br/><br/>
+            <p class="h2">So, why does this matter?</p>
+            <div class="reasons">
+                <p>[a reason]</p>
+                <p>[another reason]</p>
+                <p>[another reason]</p>
+            </div>
+            <br/>
+            
+            
+            <button class="btn" id="another">
+                gimme more reasons
+            </button>
+            <button class="btn" id="another">
+                ok, this is whack
+            </button>
+        </div>
+
+    </body>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+       
+        var starttime = 'July 1 2015 5:00:00';
+
+        function getTimeSince(t){
+            var total = Date.parse(new Date()) - Date.parse(t);
+            var seconds = Math.floor( (total/1000) % 60 );
+            var minutes = Math.floor( (total/1000/60) % 60 );
+            var hours = Math.floor( (total/(1000*60*60)) % 24 );
+            var days = Math.floor( total/(1000*60*60*24) );
+            return {
+                'total': total,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+
+        function initializeClock(id, t_start){
+            var clock = document.getElementById(id);
+            var timeinterval = setInterval(function(){
+                var t = getTimeSince(t_start);
+                clock.innerHTML = t.days + ' days <br>' +
+                              t.hours + ' hours <br>' +
+                              t.minutes + ' minutes<br>' +
+                              t.seconds + ' seconds';
+                if(t.total<=0){
+                    clearInterval(timeinterval);
+                }
+            },1000);
+        }
+
+        initializeClock('clock', starttime);
+
+
+
+    </script>
+</html>
