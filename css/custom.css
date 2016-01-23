@@ -20,10 +20,29 @@ h1, h2, h3, .h1, .h2, .h3 {
 	font-size: 30px;
 }
 
-#clock {
-	font-size: 30px;
+.small{
+	font-size: 14px;
 }
 
+#clock {
+	font-size: 50px;
+	display: inline-block;
+}
+#clock>div {
+	display: inline-block;
+	min-width: 75px;
+}
+#days, #hours, #minutes, #seconds {
+	display: inline-block;
+	height: 40px;
+}
+
+
+
+.no-pad-bottom {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 
 a:link, a:visited, a:hover, a:active{
     color: #444;
