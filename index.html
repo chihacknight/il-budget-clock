@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="./css/custom.css">
+        <link rel="stylesheet" href="css/custom.css">
         <link rel="icon" type="image/png" href="favicon.png">
 
         <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,800' rel='stylesheet' type='text/css'>
@@ -40,26 +40,52 @@
 
             <br/><br/>
             <p class="h2">So, why does this matter?</p>
-            <div class="reasons">
-                <p>[a reason]</p>
-                <p>[another reason]</p>
-                <p>[another reason]</p>
+            <div id="reasons">
+                <p id="reason">
+                    [a compelling reason]
+                </p>
             </div>
             <br/>
             
             
-            <button class="btn" id="another">
+            <button class="btn" id="more">
                 gimme more reasons
             </button>
-            <button class="btn" id="another">
+            <button class="btn" id="call-to-action-btn">
                 ok, this is whack
             </button>
+            <br/><br/>
+        </div>
+
+        <div id="do-something" class="center">
+            <p class="h2">Do something about it</p>
+            <p>[call to action here]</p>
         </div>
 
     </body>
+    <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
-       
+
+
+        var reasons = [
+            'reason 1',
+            'reason 2',
+            'reason 3',
+            'reason 4',
+            'reason 5',
+            'reason 6',
+            'reason 7',
+            'reason 8',
+            'reason 9',
+        ];
+        var i = 0;
         var starttime = 'July 1 2015 5:00:00';
+
+
+        function shuffle(o){
+            for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+            return o;
+        }
 
         function getTimeSince(t){
             var total = Date.parse(new Date()) - Date.parse(t);
@@ -90,7 +116,29 @@
             },1000);
         }
 
+        $('#do-something').hide()
         initializeClock('clock', starttime);
+        shuffle(reasons);
+
+        $('#more').on('click', function(e){
+
+            $('#reason')
+                .animate({ marginLeft: '-=1500'}, 400)
+                .animate({ marginLeft: '+=3000'}, 0)
+                .delay(200)
+                .animate({ marginLeft: '-=1500'}, 400);
+            window.setTimeout(function () {
+                $("#reason").text(reasons[i]);
+                }, 500);
+            i = (i+1) % reasons.length;
+
+
+        })
+
+        $('#call-to-action-btn').on('click', function(e){
+            $('#do-something').show()
+        })
+
 
 
 
