@@ -42,7 +42,7 @@
             <p class="h2">So, why does this matter?</p>
             <div id="reasons">
                 <p id="reason">
-                    [a compelling reason]
+                  Because Illinois State Colleges might have to shut down. <a href"http://www.huffingtonpost.com/entry/chicago-state-shutdown_us_56a5598ae4b0404eb8f200f5?ir=Politics&section=us_politics&utm_hp_ref=politics">Source.</a>
                 </p>
             </div>
             <br/>
@@ -128,8 +128,9 @@
                 .delay(200)
                 .animate({ marginLeft: '-=1500'}, 400)
                 ;
-              window.setTimeout(function () {
-                $("#reason").innerHTML(reasons[i]);
+                window.setTimeout(function () {
+                console.log($("#reason"))
+                $("#reason").html(reasons[i]);
                 }, 500);
             i = (i+1) % reasons.length;
 
