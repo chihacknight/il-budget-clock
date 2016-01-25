@@ -42,7 +42,7 @@
             <p class="h2">So, why does this matter?</p>
             <div id="reasons">
                 <p id="reason">
-                    [a compelling reason]
+                  Because Illinois State Colleges might have to shut down. <a href"http://www.huffingtonpost.com/entry/chicago-state-shutdown_us_56a5598ae4b0404eb8f200f5?ir=Politics&section=us_politics&utm_hp_ref=politics">Source.</a>
                 </p>
             </div>
             <br/>
@@ -67,16 +67,16 @@
     <script type="text/javascript">
 
 
-        var reasons = [
-            'reason 1',
-            'reason 2',
-            'reason 3',
-            'reason 4',
-            'reason 5',
-            'reason 6',
-            'reason 7',
-            'reason 8',
-            'reason 9',
+      var reasons = [
+        "Because some organizations that provide services to citizens in need can't operate without state funds.",
+        "When we finally get a budget, some of the organizations that provide services to citizens in need will have shut down permanently.",
+        "Because it damages the State's credit rating.",
+        "Because our lawmakers are failing at a fundamental part of their job--they're letting extreme ideology grind government functions to a halt.",
+        "Because lawmakers are demonstrating they are willing to let people suffer for the sake of ideology.",
+        "Because the result of this political strongarming is that our most vulnerable citizens are losing critical services.",
+        "Because we might turn off the lights at government offices. Literally. " + "Source".link("http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html"),
+        "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
+        "Because 5,000 Chicago Public School Teachers might loose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
         ];
         var i = 0;
         var starttime = 'July 1 2015 5:00:00';
@@ -126,9 +126,11 @@
                 .animate({ marginLeft: '-=1500'}, 400)
                 .animate({ marginLeft: '+=3000'}, 0)
                 .delay(200)
-                .animate({ marginLeft: '-=1500'}, 400);
-            window.setTimeout(function () {
-                $("#reason").text(reasons[i]);
+                .animate({ marginLeft: '-=1500'}, 400)
+                ;
+                window.setTimeout(function () {
+                console.log($("#reason"))
+                $("#reason").html(reasons[i]);
                 }, 500);
             i = (i+1) % reasons.length;
 
