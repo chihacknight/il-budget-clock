@@ -15,7 +15,12 @@ body {
 .content {
     background-color: #9b2114;
     text-align:center;
-    padding: 0 70px;
+    padding: 10px 50px;
+}
+
+.footer{
+	text-align: center;
+	background-color: #9b2114;
 }
 
 .about {
@@ -68,7 +73,7 @@ a:hover, a:active{
 }
 
 #reasons {
-	height: 80px;
+	height: 100px;
 	margin-left: 30px;
 	margin-right: 30px;
 }
@@ -77,8 +82,11 @@ a:hover, a:active{
 }
 
 #do-something{
-	margin-left: 30px;
-	margin-right: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 2px;
+	background-color: #c0392b;
+	text-align:center;
 }
 
 
@@ -113,4 +121,92 @@ button:hover, button:active{
 
 .btn-act {
     background-color: #219139;
+}
+
+
+/* medium screens */
+@media only screen and (max-width : 767px) {
+
+	#content{
+		padding: 10px 10px;
+	}
+	#reasons{
+		margin-left: 0px;
+		margin-right: 0px;
+		height: 120px;
+	}
+	#reason {
+		font-size: 20px;
+	}
+
+	button{
+	    border-radius: 12px;
+	    font-size: 18px;
+	    color: #eee;
+	    padding: 4px;
+	    margin: 4px;
+	    border-radius: 8px;
+
+	}
+
+
+
+}
+
+/* lil screens */
+@media only screen and (max-width : 380px) {
+	body{
+		font-size: 16px;
+	}
+	.h1 {
+		font-size: 26px;
+	}
+	.h2 {
+		font-size: 26px;
+	}
+	#reason {
+		font-size: 20px;
+	}
+	.small{
+		font-size: 14px;
+	}
+
+	button{
+
+	    border-radius: 12px;
+	    font-size: 16px;
+	    color: #eee;
+	    padding: 4px;
+	    margin: 4px;
+	    border-radius: 8px;
+
+	}
+
+
+	.header{
+		padding: 10px 0px;
+	}
+	.content{
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+	#do-something {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	#reasons{
+		margin-left: 0px;
+		margin-right: 0px;
+		height: 120px;
+	}
+
+
+	#clock {
+		font-size: 40px;
+		margin-top: 6px;
+	}
+	#clock>div {
+		min-width: 48px;
+	}
+
 }
