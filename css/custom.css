@@ -3,6 +3,7 @@ body {
 	margin: 0px;
 	background-color: #c0392b;
 	color: #eee;
+	font-size: 20px;
 }
 
 .center{
@@ -24,6 +25,14 @@ h1, h2, h3, .h1, .h2, .h3 {
 	font-size: 14px;
 }
 
+a, a:visited{
+	color: #A2DED0;
+}
+a:hover, a:active{
+	color: #eee;
+}
+
+
 #clock {
 	font-size: 50px;
 	display: inline-block;
@@ -41,7 +50,9 @@ h1, h2, h3, .h1, .h2, .h3 {
 #reasons {
 	height: 60px;
 }
-
+#reason {
+	font-size: 26px;
+}
 
 
 .no-pad-bottom {
@@ -49,9 +60,6 @@ h1, h2, h3, .h1, .h2, .h3 {
 	padding-bottom: 0px;
 }
 
-a:link, a:visited, a:hover, a:active{
-    color: #444;
-}
 
 button{
     background-color: inherit;
@@ -66,4 +74,8 @@ button{
     margin: 4px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
+}
+button:hover, button:active{
+	border-color: #A2DED0;
+	color: #A2DED0;
 }
