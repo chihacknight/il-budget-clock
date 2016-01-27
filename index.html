@@ -1,143 +1,49 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <title>Illinois Budget Clock</title>
-        
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="css/custom.css">
-        <link rel="icon" type="image/png" href="favicon.png">
+---
+layout: default
+---
 
-        <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans:400,800' rel='stylesheet' type='text/css'>
+<div class="center">
 
-    </head>
-    <body>
-        <div class="center">
-
-            <p class="h2 no-pad-bottom">Illinois has been missing a budget for</p>
-            <div id="clock">
-                <div>
-                    <span id="days"></span>
-                    <div class="small">Days</div>
-                </div>
-                <div>
-                    <span id="hours"></span>
-                    <div class="small">Hours</div>
-                </div>
-                <div>
-                    <span id="minutes"></span>
-                    <div class="small">Minutes</div>
-                </div>
-                <div>
-                    <span id="seconds"></span>
-                    <div class="small">Seconds</div>
-                </div>
-            </div>
-
-            <br/><br/>
-            <p class="h2">So, why does this matter?</p>
-            <div id="reasons">
-                <p id="reason">
-                  Because Illinois State Colleges might have to shut down. <a href="http://www.huffingtonpost.com/entry/chicago-state-shutdown_us_56a5598ae4b0404eb8f200f5?ir=Politics&section=us_politics&utm_hp_ref=politics" target="_blank">Source.</a>
-                </p>
-            </div>
-            <br/>
-            
-            
-            <button class="btn" id="more">
-                gimme more reasons
-            </button>
-            <button class="btn" id="call-to-action-btn">
-                ok, this is whack
-            </button>
-            <br/><br/>
+    <p class="h2 no-pad-bottom">Illinois has been missing a budget for</p>
+    <div id="clock">
+        <div>
+            <span id="days"></span>
+            <div class="small">Days</div>
         </div>
-
-        <div id="do-something" class="center">
-            <p class="h2">Do something about it</p>
-            <p>You can call your Illinois State Representive and Senator. <a href="http://openstates.org/find_your_legislator/">Find your Representives.</a></p>
+        <div>
+            <span id="hours"></span>
+            <div class="small">Hours</div>
         </div>
+        <div>
+            <span id="minutes"></span>
+            <div class="small">Minutes</div>
+        </div>
+        <div>
+            <span id="seconds"></span>
+            <div class="small">Seconds</div>
+        </div>
+    </div>
 
-    </body>
-    <script src="js/jquery.min.js"></script>
-    <script type="text/javascript">
+    <br/><br/>
+    <p class="h2">So, why does this matter?</p>
+    <div id="reasons">
+        <p id="reason">
+          Because Illinois State Colleges might have to shut down. <a href="http://www.huffingtonpost.com/entry/chicago-state-shutdown_us_56a5598ae4b0404eb8f200f5?ir=Politics&section=us_politics&utm_hp_ref=politics" target="_blank">Source.</a>
+        </p>
+    </div>
+    <br/>
+    
+    
+    <button class="btn" id="more">
+        gimme more reasons
+    </button>
+    <button class="btn" id="call-to-action-btn">
+        ok, this is whack
+    </button>
+    <br/><br/>
+</div>
 
-
-      var reasons = [
-        "Because some organizations that provide services to citizens in need can't operate without state funds.",
-        "When we finally get a budget, some of the organizations that provide services to citizens in need will have shut down permanently.",
-        "Because it damages the State's credit rating.",
-        "Because our lawmakers are letting extreme ideology grind government functions to a halt.",
-        "Because lawmakers are demonstrating they are willing to let people suffer for the sake of ideology.",
-        "Because the result of this political strongarming is that our most vulnerable citizens are losing critical services.",
-        "Because we might turn off the lights at government offices. Literally. " + "Source".link("http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html"),
-        "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
-        "Because 5,000 Chicago Public School Teachers might lose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
-        ];
-        var i = 0;
-        var starttime = 'July 1 2015 5:00:00';
-
-
-        function shuffle(o){
-            for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-            return o;
-        }
-
-        function getTimeSince(t){
-            var total = Date.parse(new Date()) - Date.parse(t);
-            var seconds = Math.floor( (total/1000) % 60 );
-            var minutes = Math.floor( (total/1000/60) % 60 );
-            var hours = Math.floor( (total/(1000*60*60)) % 24 );
-            var days = Math.floor( total/(1000*60*60*24) );
-            return {
-                'total': total,
-                'days': days,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds
-            };
-        }
-
-        function initializeClock(id, t_start){
-            var clock = document.getElementById(id);
-            var timeinterval = setInterval(function(){
-                var t = getTimeSince(t_start);
-                document.getElementById('days').innerHTML = t.days;
-                document.getElementById('hours').innerHTML = t.hours;
-                document.getElementById('minutes').innerHTML = t.minutes;
-                document.getElementById('seconds').innerHTML = t.seconds;
-                if(t.total<=0){
-                    clearInterval(timeinterval);
-                }
-            },1000);
-        }
-
-        $('#do-something').hide()
-        initializeClock('clock', starttime);
-        shuffle(reasons);
-
-        $('#more').on('click', function(e){
-
-            $('#reason').fadeOut().delay(200).fadeIn()
-            window.setTimeout(function () {
-                console.log($("#reason"))
-                $("#reason").html(reasons[i]);
-                }, 500);
-            i = (i+1) % reasons.length;
-
-
-        })
-
-        $('#call-to-action-btn').on('click', function(e){
-            $('#do-something').show()
-        })
-
-
-
-
-    </script>
-</html>
+<div id="do-something" class="center">
+    <p class="h2">Do something about it</p>
+    <p>You can call your Illinois State Representive and Senator. <a href="http://openstates.org/find_your_legislator/">Find your Representives.</a></p>
+</div>
