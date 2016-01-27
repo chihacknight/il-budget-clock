@@ -67,9 +67,16 @@ a:hover, a:active{
 
 #reasons {
 	height: 60px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 #reason {
 	font-size: 26px;
+}
+
+#do-something{
+	margin-left: 30px;
+	margin-right: 30px;
 }
 
 
