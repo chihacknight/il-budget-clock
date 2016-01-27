@@ -114,7 +114,7 @@
 
             $('#do-something').hide();
 
-            if($.address.parameter("reason")){
+            if($.address.parameter("reason") && parseInt($.address.parameter("reason"))<reasons.length){
                 renderReason(reasons[parseInt($.address.parameter("reason"))])
             }
             else{
