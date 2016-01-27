@@ -21,6 +21,7 @@
 
     </body>
     <script src="js/jquery.min.js"></script>
+    <script src="js/moment.js"></script>
     <script type="text/javascript">
 
 
@@ -35,46 +36,29 @@
         "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
         "Because 5,000 Chicago Public School Teachers might lose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
         ];
-        var i = 0;
-        var starttime = 'July 1 2015 5:00:00';
 
+        var clock;
+        updateClock();
+
+        setInterval(function(){
+            updateClock();
+        }, 1000);
+
+        function updateClock(){
+            clock = moment().subtract(moment("July 1 2015 5:00:00"));
+            $("#months").html(clock.get('month'));
+            $("#days").html(clock.get('day'));
+            $("#hours").html(clock.get('hour'));
+            $("#minutes").html(clock.get('minute'));
+            $("#seconds").html(clock.get('second'));
+        }
 
         function shuffle(o){
             for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
             return o;
         }
 
-        function getTimeSince(t){
-            var total = Date.parse(new Date()) - Date.parse(t);
-            var seconds = Math.floor( (total/1000) % 60 );
-            var minutes = Math.floor( (total/1000/60) % 60 );
-            var hours = Math.floor( (total/(1000*60*60)) % 24 );
-            var days = Math.floor( total/(1000*60*60*24) );
-            return {
-                'total': total,
-                'days': days,
-                'hours': hours,
-                'minutes': minutes,
-                'seconds': seconds
-            };
-        }
-
-        function initializeClock(id, t_start){
-            var clock = document.getElementById(id);
-            var timeinterval = setInterval(function(){
-                var t = getTimeSince(t_start);
-                document.getElementById('days').innerHTML = t.days;
-                document.getElementById('hours').innerHTML = t.hours;
-                document.getElementById('minutes').innerHTML = t.minutes;
-                document.getElementById('seconds').innerHTML = t.seconds;
-                if(t.total<=0){
-                    clearInterval(timeinterval);
-                }
-            },1000);
-        }
-
-        $('#do-something').hide()
-        initializeClock('clock', starttime);
+        $('#do-something').hide();
         shuffle(reasons);
 
         $('#more').on('click', function(e){
