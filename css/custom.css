@@ -28,8 +28,23 @@ body {
     max-width: 600px;
 }
 
+.thumb {
+    width: 32%;
+    float: left;
+}
+
+.headshots img {
+    max-width: 160px;
+    float: left;
+    padding-right: 10px;
+}
+
 .center{
     text-align:center;
+}
+
+.clearfix {
+    clear: both;
 }
 
 h1, h2, h3, .h1, .h2, .h3 {
@@ -54,7 +69,6 @@ a, a:visited{
 a:hover, a:active{
 	color: #eee;
 }
-
 
 #clock {
 	font-size: 50px;
