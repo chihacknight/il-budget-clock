@@ -65,7 +65,6 @@ a:hover, a:active{
 	height: 40px;
 }
 
-
 #reasons {
 	height: 60px;
 }
@@ -83,18 +82,26 @@ a:hover, a:active{
 button{
     background-color: inherit;
     outline:none;
-    border: 2px solid;
+    border: 1px solid;
     border-color: #eee;
     border-radius: 12px;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
     color: #eee;
-    padding: 4px;
-    margin: 4px;
+    padding: 8px;
+    margin: 8px;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
 button:hover, button:active{
 	border-color: #A2DED0;
 	color: #A2DED0;
+}
+
+.btn-next {
+    background-color: #720b00;
+}
+
+.btn-act {
+    background-color: #219139;
 }
