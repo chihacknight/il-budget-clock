@@ -17,3 +17,6 @@ Then open your web browser and navigate to http://localhost:4000
 
 * [Jekyll](http://jekyllrb.com/) - Static site generator built in Ruby
 
+## Team
+
+Check out the about page for information about the team who built this ChiHackNight Project. 
