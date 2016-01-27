@@ -1,10 +1,19 @@
 body {
 	font-family: 'Alegreya Sans', sans-serif;
 	margin: 0px;
-	background-color: #c0392b;
+	background-color: #9b2114;
 	color: #eee;
 	font-size: 20px;
-	padding: 20px;
+    text-align:center;
+}
+
+.header {
+    padding: 30px 0;
+    background-color: #c0392b;
+}
+
+.content {
+    background-color: #9b2114;
 }
 
 .center{
@@ -38,7 +47,6 @@ a:hover, a:active{
 #clock {
 	font-size: 50px;
 	display: inline-block;
-	background-color: #d55143;
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-top: 10px;
@@ -47,7 +55,7 @@ a:hover, a:active{
 	display: inline-block;
 	min-width: 75px;
 }
-#days, #hours, #minutes, #seconds {
+#months, #days, #hours, #minutes, #seconds {
 	display: inline-block;
 	height: 40px;
 }
