@@ -78,6 +78,11 @@
                 {title: "More than 15,000 women will not receive potentially life-saving breast and cervical cancer screenings.", source: "Responsible Budget Coalition", url: "http://www.responsiblebudget.org/sites/default/files/content/pdfs/State%20of%20Our%20State%20Full%20FIN%20-%2001.26.15.pdf"},
                 {title: "The state has yet to pay Illinois State Fair butter sculptor the $2,500 she’s owed for sculpting a butter cow.", source: "NPR", url: "http://www.npr.org/2015/12/08/458959374/illinois-budget-crisis-reveals-cost-of-state-fair-butter-sculptures"}
             ]
+            var indices = []
+            $.each(reasons, function( index, value ) {
+                indices.push(index);
+            });
+
             var i = 0;
 
             var clock;
@@ -107,14 +112,15 @@
 
 
             $('#do-something').hide();
-            shuffle(reasons);
             renderReason(default_reason)
+            
 
+            shuffle(indices);
             $('#more').on('click', function(e){
 
                 $('#reason').fadeOut().delay(200).fadeIn()
                 window.setTimeout(function () {
-                    renderReason(reasons[i]);
+                    renderReason(reasons[indices[i]]);
                     }, 500);
 
                 i = (i+1) % reasons.length;
@@ -125,7 +131,6 @@
             $('#call-to-action-btn').on('click', function(e){
                 $('#do-something').show();
             })
-
 
 
 
