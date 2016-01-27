@@ -181,6 +181,7 @@ button:hover, button:active{
 	}
 	.h2 {
 		font-size: 26px;
+		margin-top: 4px;
 	}
 	#reason {
 		font-size: 20px;
@@ -221,7 +222,7 @@ button:hover, button:active{
 
 	#clock {
 		font-size: 40px;
-		margin-top: 6px;
+		margin-top: 0px;
 	}
 	#clock>div {
 		min-width: 48px;
