@@ -163,6 +163,10 @@ button:hover, button:active{
 
 	}
 
+	.headshots {
+	    display: none;
+	}
+
 
 
 }
@@ -221,6 +225,10 @@ button:hover, button:active{
 	}
 	#clock>div {
 		min-width: 48px;
+	}
+
+	.headshots img {
+	    display: none;
 	}
 
 }
