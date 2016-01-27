@@ -135,7 +135,9 @@
             })
 
             $('#call-to-action-btn').on('click', function(e){
-                $('#do-something').slideDown(function(){ window.location = "#do-something"; });
+                $('#do-something').slideDown(function(){ $('html, body').animate({
+                        scrollTop: $("#do-something").offset().top
+                     }, 500); });
                 
                 _trackClickEventWithGA('Click', 'Do something', 'Do something')
             })
