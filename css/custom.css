@@ -37,6 +37,10 @@ a:hover, a:active{
 #clock {
 	font-size: 50px;
 	display: inline-block;
+	background-color: #d55143;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
 }
 #clock>div {
 	display: inline-block;
