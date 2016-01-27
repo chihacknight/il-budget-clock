@@ -28,6 +28,7 @@ h1, h2, h3, .h1, .h2, .h3 {
 
 a, a:visited{
 	color: #A2DED0;
+	text-decoration: none;
 }
 a:hover, a:active{
 	color: #eee;
