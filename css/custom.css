@@ -20,6 +20,7 @@ body {
 
 .about {
     padding: 0 30px;
+    max-width: 600px;
 }
 
 .center{
@@ -38,7 +39,7 @@ h1, h2, h3, .h1, .h2, .h3 {
 }
 
 .small{
-	font-size: 14px;
+	font-size: 16px;
 }
 
 a, a:visited{
