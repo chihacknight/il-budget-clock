@@ -1,0 +1,8 @@
+port:  5000
+markdown: kramdown
+name: Illinois Budget Clock
+url: http://ilbudgetclock.com
+title: Illinois Budget Clock
+description: "Illinois has languished without a budget for"
+encoding: utf-8
+timezone: America/Chicago
