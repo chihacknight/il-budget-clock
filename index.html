@@ -71,12 +71,12 @@
         "Because some organizations that provide services to citizens in need can't operate without state funds.",
         "When we finally get a budget, some of the organizations that provide services to citizens in need will have shut down permanently.",
         "Because it damages the State's credit rating.",
-        "Because our lawmakers are failing at a fundamental part of their job--they're letting extreme ideology grind government functions to a halt.",
+        "Because our lawmakers are letting extreme ideology grind government functions to a halt.",
         "Because lawmakers are demonstrating they are willing to let people suffer for the sake of ideology.",
         "Because the result of this political strongarming is that our most vulnerable citizens are losing critical services.",
         "Because we might turn off the lights at government offices. Literally. " + "Source".link("http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html"),
         "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
-        "Because 5,000 Chicago Public School Teachers might loose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
+        "Because 5,000 Chicago Public School Teachers might lose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
         ];
         var i = 0;
         var starttime = 'July 1 2015 5:00:00';
@@ -122,13 +122,8 @@
 
         $('#more').on('click', function(e){
 
-            $('#reason')
-                .animate({ marginLeft: '-=1500'}, 400)
-                .animate({ marginLeft: '+=3000'}, 0)
-                .delay(200)
-                .animate({ marginLeft: '-=1500'}, 400)
-                ;
-                window.setTimeout(function () {
+            $('#reason').fadeOut().delay(200).fadeIn()
+            window.setTimeout(function () {
                 console.log($("#reason"))
                 $("#reason").html(reasons[i]);
                 }, 500);
