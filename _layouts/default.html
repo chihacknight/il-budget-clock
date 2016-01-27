@@ -44,9 +44,9 @@
         <script src="js/analytics_lib.js"></script>
         <script type="text/javascript">
 
+            default_reason = {title: 'We might turn off the lights at government offices. Literally.', source: 'Chicago Tribune', url: 'http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html'}
 
             var reasons = [
-                {title: 'We might turn off the lights at government offices. Literally.', source: 'Chicago Tribune', url: 'http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html'},
                 {title: 'Medicaid patients might stop receiving healthcare.', source: "Progress Illinois", url: 'http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse'},
                 {title: "Illinois isn't paying insurance claims for state employees, and employees might have to start paying their doctors up front.", source: 'Chicago Sun-Times', url: 'http://chicago.suntimes.com/news/7/71/1271192/rahm-gov-name-calling-doesnt-help'},
                 {title: "College students can't afford to return to school because they might have to pay back tuition funds that were supposed to be scholarships.", source: 'Chicago Tribune', url: "http://www.chicagotribune.com/news/local/politics/ct-illinois-budget-impasse-met-20151227-story.html"},
@@ -102,19 +102,20 @@
                 return o;
             }
 
-            function renderReason(){
-                $("#reason").html(reasons[i]['title']+'<br /><span  class="small">Source: <a href="'+reasons[i]['url']+'" target="blank">' + reasons[i]['source'] + '</a></span>');
+            function renderReason(reason){
+                $("#reason").html(reason['title']+'<br /><span  class="small">Source: <a href="'+reason['url']+'" target="blank">' + reason['source'] + '</a></span>');
             }
+
 
             $('#do-something').hide();
             shuffle(reasons);
-            renderReason();
+            renderReason(default_reason)
 
             $('#more').on('click', function(e){
 
                 $('#reason').fadeOut().delay(200).fadeIn()
                 window.setTimeout(function () {
-                    renderReason();
+                    renderReason(reasons[i]);
                     }, 500);
 
                 i = (i+1) % reasons.length;
