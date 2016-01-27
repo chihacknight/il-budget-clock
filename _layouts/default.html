@@ -19,66 +19,67 @@
         
         {{content}}
 
-    </body>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/moment.js"></script>
-    <script type="text/javascript">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/analytics_lib.js"></script>
+        <script type="text/javascript">
 
 
-      var reasons = [
-        "Because some organizations that provide services to citizens in need can't operate without state funds.",
-        "When we finally get a budget, some of the organizations that provide services to citizens in need will have shut down permanently.",
-        "Because it damages the State's credit rating.",
-        "Because our lawmakers are letting extreme ideology grind government functions to a halt.",
-        "Because lawmakers are demonstrating they are willing to let people suffer for the sake of ideology.",
-        "Because the result of this political strongarming is that our most vulnerable citizens are losing critical services.",
-        "Because we might turn off the lights at government offices. Literally. " + "Source".link("http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html"),
-        "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
-        "Because 5,000 Chicago Public School Teachers might lose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
-        ];
+          var reasons = [
+            "Because some organizations that provide services to citizens in need can't operate without state funds.",
+            "When we finally get a budget, some of the organizations that provide services to citizens in need will have shut down permanently.",
+            "Because it damages the State's credit rating.",
+            "Because our lawmakers are letting extreme ideology grind government functions to a halt.",
+            "Because lawmakers are demonstrating they are willing to let people suffer for the sake of ideology.",
+            "Because the result of this political strongarming is that our most vulnerable citizens are losing critical services.",
+            "Because we might turn off the lights at government offices. Literally. " + "Source".link("http://www.chicagotribune.com/news/local/politics/ct-jesse-white-illinois-budget-met-0926-20150925-story.html"),
+            "Because Medicaid patients might stop receiving healthcare. " + "Source".link("http://progressillinois.com/news/content/2015/07/23/state-hit-suit-over-hospital-medicaid-payments-during-budget-impasse"),
+            "Because 5,000 Chicago Public School Teachers might lose their jobs. " + "Source".link("http://chicago.suntimes.com/chicago-politics/7/71/972395/claypool-many-5000-chicago-public-school-teachers-face-november-layoff"),
+            ];
 
-        var clock;
-        updateClock();
-
-        setInterval(function(){
+            var clock;
             updateClock();
-        }, 1000);
 
-        function updateClock(){
-            clock = moment().subtract(moment("July 1 2015 5:00:00"));
-            $("#months").html(clock.get('month'));
-            $("#days").html(clock.get('day'));
-            $("#hours").html(clock.get('hour'));
-            $("#minutes").html(clock.get('minute'));
-            $("#seconds").html(clock.get('second'));
-        }
+            setInterval(function(){
+                updateClock();
+            }, 1000);
 
-        function shuffle(o){
-            for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-            return o;
-        }
+            function updateClock(){
+                clock = moment().subtract(moment("July 1 2015 5:00:00"));
+                $("#months").html(clock.get('month'));
+                $("#days").html(clock.get('day'));
+                $("#hours").html(clock.get('hour'));
+                $("#minutes").html(clock.get('minute'));
+                $("#seconds").html(clock.get('second'));
+            }
 
-        $('#do-something').hide();
-        shuffle(reasons);
+            function shuffle(o){
+                for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+                return o;
+            }
 
-        $('#more').on('click', function(e){
+            $('#do-something').hide();
+            shuffle(reasons);
 
-            $('#reason').fadeOut().delay(200).fadeIn()
-            window.setTimeout(function () {
-                console.log($("#reason"))
-                $("#reason").html(reasons[i]);
-                }, 500);
-            i = (i+1) % reasons.length;
+            $('#more').on('click', function(e){
 
-
-        })
-
-        $('#call-to-action-btn').on('click', function(e){
-            $('#do-something').show()
-        })
+                $('#reason').fadeOut().delay(200).fadeIn()
+                window.setTimeout(function () {
+                    console.log($("#reason"))
+                    $("#reason").html(reasons[i]);
+                    }, 500);
+                i = (i+1) % reasons.length;
 
 
+            })
+
+            $('#call-to-action-btn').on('click', function(e){
+                $('#do-something').show()
+            })
 
 
-    </script>
+
+
+        </script>
+    </body>
 </html>
