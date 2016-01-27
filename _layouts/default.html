@@ -40,6 +40,7 @@
 
         <script src="js/jquery.min.js"></script>
         <script src="js/moment.js"></script>
+        <script src="js/jquery.address.js"></script>
         <script src="js/analytics_lib.js"></script>
         <script type="text/javascript">
 
@@ -112,19 +113,24 @@
 
 
             $('#do-something').hide();
-            renderReason(default_reason)
-            
+
+            if($.address.parameter("reason")){
+                renderReason(reasons[parseInt($.address.parameter("reason"))])
+            }
+            else{
+                renderReason(default_reason)
+            }
+
 
             shuffle(indices);
             $('#more').on('click', function(e){
 
+                $.address.parameter('reason', indices[i]);
                 $('#reason').fadeOut().delay(200).fadeIn()
                 window.setTimeout(function () {
                     renderReason(reasons[indices[i]]);
+                    i = (i+1) % reasons.length;
                     }, 500);
-
-                i = (i+1) % reasons.length;
-
 
             })
 
