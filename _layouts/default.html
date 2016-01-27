@@ -96,7 +96,7 @@
             function updateClock(){
                 clock = moment().subtract(moment("July 1 2015 5:00:00"));
                 $("#months").html(clock.get('month'));
-                $("#days").html(clock.get('day'));
+                $("#days").html(clock.get('date'));
                 $("#hours").html(clock.get('hour'));
                 $("#minutes").html(clock.get('minute'));
                 $("#seconds").html(clock.get('second'));
