@@ -87,6 +87,7 @@
             var i = 0;
 
             var clock;
+            var start_date = moment("2015-07-02T23:00:00.000Z");
             updateClock();
 
             setInterval(function(){
@@ -94,7 +95,7 @@
             }, 1000);
 
             function updateClock(){
-                clock = moment().subtract(moment("July 1 2015 5:00:00"));
+                clock = moment(moment().diff(start_date));
                 $("#months").html(clock.get('month'));
                 $("#days").html(clock.get('date'));
                 $("#hours").html(clock.get('hour'));
