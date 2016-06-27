@@ -96,6 +96,7 @@
 
             function updateClock(){
                 clock = moment(moment().diff(start_date));
+                $("#years").html(clock.get('year') - 1970);
                 $("#months").html(clock.get('month'));
                 $("#days").html(clock.get('date'));
                 $("#hours").html(clock.get('hour'));
