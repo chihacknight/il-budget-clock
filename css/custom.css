@@ -13,9 +13,20 @@ body {
 }
 
 .content {
-    background-color: #9b2114;
+    background-color: #c0392b;
     text-align:center;
     padding: 10px 50px;
+}
+
+.message {
+    margin: auto;
+    background-color: #9b2114;
+    text-align:left;
+    max-width: 700px;
+}
+
+.message .h2 {
+    text-align:center;
 }
 
 .footer{
