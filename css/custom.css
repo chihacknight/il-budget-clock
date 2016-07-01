@@ -18,15 +18,28 @@ body {
     padding: 10px 50px;
 }
 
+.message-wrapper {
+    background-color: #fff;
+}
+
 .message {
     margin: auto;
-    background-color: #9b2114;
+    padding: 10px;
+    background-color: #fff;
     text-align:left;
     max-width: 700px;
 }
 
-.message .h2 {
-    text-align:center;
+.message p, .message li {
+    color: #333;
+}
+
+.message .h1, .message .h2, .message .h3 {
+    color: #9b2114; 
+}
+
+.message a, .message a:hover, .message a:visited {
+    color: #9b2114;
 }
 
 .footer{
