@@ -87,15 +87,20 @@
             var i = 0;
 
             var clock;
-            var start_date = moment("2015-07-02T23:00:00.000Z");
+
+            // start counting July 2, 2015 12am GMT-6
+            var start_date =    moment("2015-07-02T17:00:00.000Z");
+
+            // stop counting June 30, 2016 5:18pm GMT-6
+            var end_date =      moment("2016-06-30T16:18:29.000Z");
             updateClock();
 
-            setInterval(function(){
-                updateClock();
-            }, 1000);
+            // setInterval(function(){
+            //     updateClock();
+            // }, 1000);
 
             function updateClock(){
-                clock = moment(moment().diff(start_date));
+                clock = moment(end_date.diff(start_date));
                 $("#months").html(clock.get('month'));
                 $("#days").html(clock.get('date'));
                 $("#hours").html(clock.get('hour'));
