@@ -58,9 +58,13 @@ body {
 }
 
 .headshots img {
-    max-width: 160px;
+    max-width: 210px;
     float: left;
     padding-right: 10px;
+}
+
+.headshots span {
+    color: #333;
 }
 
 .center{
