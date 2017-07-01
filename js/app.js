@@ -10,7 +10,7 @@ $(function() {
     var clock;
 
     // start counting July 2, 2015 12am GMT-6
-    var start_date =    moment("2015-07-02T17:00:00.000Z");
+    var start_date =    moment("2015-07-01T23:00:00.000Z");
 
     updateClock();
 
@@ -23,7 +23,7 @@ $(function() {
         // console.log(clock)
         $("#years").html(clock.get('year') - 1970);
         $("#months").html(clock.get('month'));
-        $("#days").html(clock.get('date'));
+        $("#days").html(clock.get('date') - 1);
         $("#hours").html(clock.get('hour'));
         $("#minutes").html(clock.get('minute'));
         $("#seconds").html(clock.get('second'));
