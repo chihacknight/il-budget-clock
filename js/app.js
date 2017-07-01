@@ -9,7 +9,7 @@ $(function() {
 
     var clock;
 
-    // start counting July 2, 2015 12am GMT-6
+    // start counting July 1, 2015 12am
     var start_date =    moment("2015-07-01T23:00:00.000Z");
 
     updateClock();
