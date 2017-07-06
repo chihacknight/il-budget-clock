@@ -10,16 +10,19 @@ $(function() {
     var clock;
 
     // start counting July 1, 2015 12am
-    var start_date =    moment("2015-07-01T23:00:00.000Z");
+    var start_date =    moment("2015-06-30T18:00:00.000Z");
+    
+    // budget passed on July 6, 2017 4:34pm
+    var end_date   =    moment("2017-07-06T16:34:00.000Z")
 
     updateClock();
 
-    setInterval(function(){
-        updateClock();
-    }, 1000);
+    // setInterval(function(){
+    //     updateClock();
+    // }, 1000);
 
     function updateClock(){
-        clock = moment(moment().diff(start_date));
+        clock = moment(end_date.diff(start_date));
         // console.log(clock)
         $("#years").html(clock.get('year') - 1970);
         $("#months").html(clock.get('month'));
